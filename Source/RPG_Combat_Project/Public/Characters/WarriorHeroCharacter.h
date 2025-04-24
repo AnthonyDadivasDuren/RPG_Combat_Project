@@ -13,5 +13,8 @@ UCLASS()
 class RPG_COMBAT_PROJECT_API AWarriorHeroCharacter : public AWarriorBaseCharacter
 {
 	GENERATED_BODY()
+
+protected:
+	virtual void BeginPlay() override;
 	
 };
