@@ -9,9 +9,27 @@
 /**
  * 
  */
+
+class AWarriorHeroCharacter;
+
 UCLASS()
 class RPG_COMBAT_PROJECT_API UWarriorHeroAnimInstance : public UWarriorCharacterAnimInstance
 {
 	GENERATED_BODY()
+public:
 	
+	virtual void NativeInitializeAnimation() override;
+	virtual void NativeThreadSafeUpdateAnimation(float DeltaSeconds);
+
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Animdata|Refrences")
+	AWarriorHeroCharacter* OwningHeroCharacter;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Animdata|LocomotionData")
+	bool bShouldEnterRelaxedState;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animdata|LocomotionData")
+	float EnterRelaxedStateThreshold { 5.f };
+
+	float IdleElapsedTime;
 };
