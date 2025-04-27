@@ -14,7 +14,9 @@ public class RPG_Combat_Project : ModuleRules
 			"Engine",
 			"InputCore",
 			"EnhancedInput",
-			"GameplayTags" });
+			"GameplayTags",
+			"GameplayTasks", 
+    		"GameplayAbilities" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
